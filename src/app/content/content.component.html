@@ -4,7 +4,7 @@
         <label>Include the text "name" or "country" to see data?</label><br>
         <input type="text" [(ngModel)] = "option" autofocus>
 
-        <section *ngIf="(option|lowercase) === 'name' || (option|lowercase) === 'country'">
+        <section *ngIf="(option|lowercase) === 'name' || (option|lowercase) === 'country'; else incorrect">
             
             <div *ngIf="(option|lowercase) === 'name'">
                 <h4>My name is {{student.name}}</h4>
@@ -16,7 +16,13 @@
                 <img src="{{student.homeFlag}}" alt="home country flag" id="home-flag">
             </div>
         </section>
+
+        <ng-template #incorrect>
+            <h4 [ngStyle]="{color: 'red'}">Entry Incorrect... <br>Must enter NAME or COUNTRY</h4>
+            <p>Contact me if you have questions: <br><b>{{student.email}}</b></p>
+        </ng-template>
+
     </div>
 
-    <div class="area2"></div>
+    <div class="area2" [ngStyle]="{'text-align': 'center'}"></div>
 </section>
