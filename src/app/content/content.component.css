@@ -9,7 +9,7 @@
 }
 
 .area1, .area2 {
-    height: 370px;
+    height: 350px;
 }
 
 .area2 {
@@ -23,4 +23,9 @@ label {
 
 input {
     background-color: #EBC7E6;
+}
+
+hr {
+    height: 2px;
+    background-color: #645CBB;
 }
