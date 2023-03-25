@@ -8,4 +8,6 @@ import { Student } from '../myClasses/student';
 })
 export class ContentComponent {
   @Input() student!: Student;
+
+  option = "name";
 }

@@ -1,7 +1,21 @@
 <section>
     <div class="area1" [ngStyle] = "{'text-align': 'center'}">
-        <label for="input">Include the text "NAME" or "COUNTRY" to see data?</label>
-        <input type="text" name="input" id="input">
+        
+        <label>Include the text "name" or "country" to see data?</label><br>
+        <input type="text" [(ngModel)] = "option" autofocus>
+
+        <section *ngIf="(option|lowercase) === 'name' || (option|lowercase) === 'country'">
+            
+            <div *ngIf="(option|lowercase) === 'name'">
+                <h4>My name is {{student.name}}</h4>
+                <img src="{{student.image}}" alt="student image" id="simage">
+            </div>
+            
+            <div *ngIf="(option|lowercase) === 'country'">
+                <h4>My home country is {{student.homeCountry}}</h4>
+                <img src="{{student.homeFlag}}" alt="home country flag" id="home-flag">
+            </div>
+        </section>
     </div>
 
     <div class="area2"></div>
