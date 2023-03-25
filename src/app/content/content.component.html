@@ -1,8 +1,8 @@
 <section>
-    <div class="area1" [ngStyle] = "{'text-align': 'center'}">
+    <div class="area1" [ngStyle]="{'text-align': 'center'}">
         
         <label>Include the text "name" or "country" to see data?</label><br>
-        <input type="text" [(ngModel)] = "option" autofocus>
+        <input type="text" [(ngModel)]="option" autofocus>
 
         <section *ngIf="(option|lowercase) === 'name' || (option|lowercase) === 'country'; else incorrect">
             
@@ -24,5 +24,20 @@
 
     </div>
 
-    <div class="area2" [ngStyle]="{'text-align': 'center'}"></div>
+    <div class="area2" [ngStyle]="{'text-align': 'center'}">
+        
+        <label>Enter cost of car to purchase:</label><br>
+        <input type="number" [(ngModel)]="cost" autofocus>
+
+        <section>
+            <div>
+                <h4 [ngStyle]="{color: ''}">Car Cost in {{student.currentCountry}}: </h4>
+                <h4>{{cost | currency:currencyCodeCurrentCountry}}</h4>
+            </div>
+            <div>
+                <h4 [ngStyle]="{color: ''}">Car Cost in {{student.homeCountry}}: </h4>
+                <h4>{{(cost*conversionRate) | currency:currencyCodeHomeCountry}}</h4>
+            </div>
+        </section>
+    </div>
 </section>

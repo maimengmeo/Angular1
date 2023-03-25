@@ -10,4 +10,9 @@ export class ContentComponent {
   @Input() student!: Student;
 
   option = "name";
+  cost = 0;
+  currencyCodeCurrentCountry = "CAD";
+  currencyCodeHomeCountry = "VND";
+  conversionRate = 17042.78;
+
 }
