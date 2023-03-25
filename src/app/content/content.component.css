@@ -1,13 +1,26 @@
 #simage {
-    width: 30%;
-    height: 30%;
+    width: 40%;
+    height: 40%;
 }
 
 #home-flag {
-    width: 60%;
-    height: 60%;
+    width: 80%;
+    height: 80%;
 }
 
 .area1, .area2 {
-    height: 380px;
+    height: 370px;
+}
+
+.area2 {
+    background-color: #ECF2FF;
+    padding-top: 30px;
+}
+
+label {
+    font-size: 17px;
+}
+
+input {
+    background-color: #EBC7E6;
 }

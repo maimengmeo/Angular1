@@ -2,3 +2,8 @@
 body {
     text-align: center;
 }
+
+.header, .footer {
+    background-color: #645CBB;
+    color: white;
+}

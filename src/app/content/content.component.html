@@ -7,18 +7,18 @@
         <section *ngIf="(option|lowercase) === 'name' || (option|lowercase) === 'country'; else incorrect">
             
             <div *ngIf="(option|lowercase) === 'name'">
-                <h4>My name is {{student.name}}</h4>
+                <h3>My name is {{student.name}}</h3>
                 <img src="{{student.image}}" alt="student image" id="simage">
             </div>
             
             <div *ngIf="(option|lowercase) === 'country'">
-                <h4>My home country is {{student.homeCountry}}</h4>
+                <h3>My home country is {{student.homeCountry}}</h3>
                 <img src="{{student.homeFlag}}" alt="home country flag" id="home-flag">
             </div>
         </section>
 
         <ng-template #incorrect>
-            <h4 [ngStyle]="{color: 'red'}">Entry Incorrect... <br>Must enter NAME or COUNTRY</h4>
+            <h3 [ngStyle]="{color: 'red'}">Entry Incorrect... <br>Must enter NAME or COUNTRY</h3>
             <p>Contact me if you have questions: <br><b>{{student.email}}</b></p>
         </ng-template>
 
@@ -29,14 +29,16 @@
         <label>Enter cost of car to purchase:</label><br>
         <input type="number" [(ngModel)]="cost" autofocus>
 
+        <br><br><hr><br>
+
         <section>
             <div>
-                <h4 [ngStyle]="{color: ''}">Car Cost in {{student.currentCountry}}: </h4>
-                <h4>{{cost | currency:currencyCodeCurrentCountry}}</h4>
+                <h3 [ngStyle]="{color: '#A084DC'}">Car Cost in {{student.currentCountry}}: </h3>
+                <h3>{{cost | currency:currencyCodeCurrentCountry}}</h3>
             </div>
             <div>
-                <h4 [ngStyle]="{color: ''}">Car Cost in {{student.homeCountry}}: </h4>
-                <h4>{{(cost*conversionRate) | currency:currencyCodeHomeCountry}}</h4>
+                <h3 [ngStyle]="{color: '#EA8FEA'}">Car Cost in {{student.homeCountry}}: </h3>
+                <h3>{{(cost*conversionRate) | currency:currencyCodeHomeCountry}}</h3>
             </div>
         </section>
     </div>
